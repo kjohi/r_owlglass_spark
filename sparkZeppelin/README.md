@@ -13,4 +13,4 @@ to stop:  docker stop sparky
 
 ## Run 
 
-http://localhost:8889
+http://localhost:8889/#/notebook/2A94M5J1Z
