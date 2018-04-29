@@ -1,7 +1,7 @@
 # Setup:
 
 Assumes that docker is installed.  The container downloads Spark, so it builds a little slowly.  
-Has a few placeholders for adding in aws config for localstack
+Has a few placeholders for adding in localstack aws config later
 
 ## Build and run container:
 
