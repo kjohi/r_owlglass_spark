@@ -11,4 +11,4 @@ docker run --name sparky -p 127.0.0.1:8889:8889 -td sparkzepp
 
 ## Run 
 
-http://localhost:8889
+http://localhost:8889/#/notebook/2A94M5J1Z
