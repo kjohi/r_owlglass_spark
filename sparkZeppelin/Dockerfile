@@ -3,9 +3,11 @@ MAINTAINER ko <kolin.ohi@gmail.com>
 ENV ZEPPELIN_PORT="8889"
 
 RUN mkdir -p /root/.aws
-ADD interpreter.json /zeppelin/conf/
-ADD zeppelin-site.xml /zeppelin/conf/
-ADD requirements.txt /root/
+ADD resources/interpreter.json /zeppelin/conf/
+ADD resources/zeppelin-site.xml /zeppelin/conf/
+ADD resources/requirements.txt /root/
+ADD resources/credentials /root/.aws
+ADD resources/config /root/.aws
 
 RUN pip install -r /root/requirements.txt
 
