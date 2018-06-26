@@ -12,7 +12,7 @@ ADD resources/config /root/.aws
 RUN pip install -r /root/requirements.txt
 
 
-ENV SPARK_VERSION 2.2.0
+ENV SPARK_VERSION 2.3.1
 ENV HADOOP_PROFILE 2.7
 ENV HADOOP_VERSION 2.7.3
 ENV HADOOP_PREFIX /usr/local/hadoop
@@ -41,8 +41,8 @@ ADD resources/hdfs_conf/yarn-site.xml $HADOOP_PREFIX/etc/hadoop/yarn-site.xml
 #install spark
 
 RUN cd /tmp && \
-        wget -q http://apache.mirrors.pair.com/spark/spark-2.2.0/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE}.tgz && \
-        echo "7A186A2A007B2DFD880571F7214A7D329C972510A460A8BDBEF9F7F2A891019343C020F74B496A61E5AA42BC9E9A79CC99DEFE5CB3BF8B6F49C07E01B259BC6B *spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE}.tgz" | sha512sum -c - && \
+        wget -q http://apache.mirrors.pair.com/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE}.tgz && \
+        echo "DC3A97F3D99791D363E4F70A622B84D6E313BD852F6FDBC777D31EAB44CBC112CEEAA20F7BF835492FB654F48AE57E9969F93D3B0E6EC92076D1C5E1B40B4696 *spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE}.tgz" | sha512sum -c - && \
         tar xzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE}.tgz -C /usr/local && \
         rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE}.tgz
 RUN cd /usr/local && ln -s spark-${SPARK_VERSION}-bin-hadoop${HADOOP_PROFILE} spark
